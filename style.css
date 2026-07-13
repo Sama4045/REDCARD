@@ -1,0 +1,412 @@
+/* =========================================================
+   RED CARD 2018 — Stylesheet
+   index.html   -> Submission form (screen1.png)
+   screen2.html -> Awards results page (screen2.png)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --red: #8a3132;
+  --red-dark: #6f2627;
+  --dark: #1a1a1a;
+  --white: #ffffff;
+  --heading-font: 'Baloo 2', 'Poppins', sans-serif;
+  --body-font: 'Poppins', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--dark);
+  background: var(--white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   HEADER (shared)
+   ========================================================= */
+.site-header {
+  padding: 24px 40px;
+  background: var(--white);
+}
+
+.site-header img {
+  width: 64px;
+  height: 64px;
+}
+
+/* =========================================================
+   INDEX.HTML — SUBMISSION FORM (screen1.png)
+   ========================================================= */
+.submission {
+  background: var(--red);
+  padding: 42px 60px 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---- left column ---- */
+.submission-intro h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 54px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.submission-intro p {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 26px;
+}
+
+.submission-intro .close-date {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--dark);
+  max-width: 300px;
+}
+
+/* small decorative squares seen scattered in the mockup */
+.deco-square {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  margin-top: 30px;
+}
+
+/* ---- right column: form ---- */
+.submission-form input[type="text"],
+.submission-form input[type="email"],
+.submission-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: var(--white);
+  font-family: var(--body-font);
+  font-size: 13px;
+  padding: 11px 16px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.submission-form input::placeholder,
+.submission-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.submission-form textarea {
+  height: 56px;
+  margin-bottom: 14px;
+}
+
+.award-heading {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--dark);
+  margin-bottom: 3px;
+}
+
+.award-hint {
+  font-size: 10.5px;
+  color: var(--dark);
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.award-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.award-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--white);
+  border-radius: 2px;
+  background: transparent;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.award-check input[type="checkbox"]:checked {
+  background: var(--white);
+}
+
+.award-check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--red);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.award-icon-btn {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--red);
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  color: var(--dark);
+  border: none;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 17px 34px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.submit-btn .check-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--dark);
+}
+
+/* diagonal corner cut, bottom-right of the red panel */
+.submission::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 120px 150px;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+/* =========================================================
+   SCREEN2.HTML — RESULTS PAGE (screen2.png)
+   ========================================================= */
+.mobile-frame {
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.results-hero {
+  background: var(--red);
+  padding: 26px 26px 46px;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-hero .logo-ring {
+  width: 58px;            /* width: 58px;       height: 58px;    14px;*/
+  height: 58px;
+  margin-bottom: 14px;
+  filter: brightness(0) invert(1);
+}
+
+.results-hero h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.results-hero h2 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+
+.results-hero p {
+  font-size: 10.5px;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.results-hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 46px 70px;
+  border-color: transparent transparent var(--white) transparent;
+}
+
+/* ---- best clubs blocks ---- */
+.clubs-section {
+  padding: 28px 26px 6px;
+}
+
+.clubs-block {
+  margin-bottom: 26px;
+}
+
+.clubs-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+
+.clubs-block h3 .tri {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 18px 14px;
+  border-color: transparent transparent var(--red) transparent;
+}
+
+.clubs-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.club {
+  flex: 1;
+  text-align: center;
+}
+
+.club img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+}
+
+.club .lorem-a {
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--red);
+  line-height: 1.3;
+}
+
+.club .lorem-b {
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+/* ---- footer / next launch ---- */
+.results-footer {
+  background: var(--red);
+  padding: 32px 26px 54px;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-footer h2 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--white);
+  max-width: 320px;
+}
+
+.results-footer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 26px 400px;
+  border-color: transparent transparent #000000 transparent;
+}
+
+/* =========================================================
+   RESPONSIVE — index.html collapses to a single column
+   ========================================================= */
+@media (max-width: 860px) {
+  .submission {
+    padding: 40px 24px 70px;
+  }
+
+  .submission-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .submission-intro h1 {
+    font-size: 44px;
+  }
+
+  .submission::after {
+    border-width: 0 0 70px 90px;
+  }
+}
