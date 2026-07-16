@@ -28,7 +28,7 @@ REDCARD/
 │
 ├── index.html
 ├── screen2.html
-├── style.css
+├── style_updated.css
 └── README.md
 ```
 
